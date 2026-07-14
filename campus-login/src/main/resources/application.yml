@@ -1,0 +1,30 @@
+# ==================== 登录模块配置 ====================
+spring:
+  application:
+    name: campus-login
+  config:
+    import:
+      - classpath:application-common.yml    # 引入公共配置
+  profiles:
+    active: dev                              # 激活开发环境
+
+# 服务器端口
+server:
+  port: 8081
+
+# JWT 配置（登录模块独有）
+jwt:
+  private-key-path: classpath:jwt/private_key.pem
+  public-key-path: classpath:jwt/public_key.pem
+  access-token-expiration: 15     # 分钟
+  refresh-token-expiration: 10080 # 分钟（7天）
+
+# 短信配置（登录模块独有）
+sms:
+  mode: mock
+  mock-code: 123456
+
+# TOTP 双因素认证配置
+totp:
+  issuer: CampusPlatform
+  temp-token-expire-seconds: 300

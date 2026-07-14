@@ -1,0 +1,28 @@
+# ==================== 生产环境配置 ====================
+
+spring:
+  # 生产环境从环境变量读取敏感信息
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+
+# 短信：生产用阿里云
+sms:
+  mode: aliyun
+  mock-code:
+  aliyun:
+    access-key-id: ${ALIYUN_AK}
+    access-key-secret: ${ALIYUN_SK}
+    sign-name: ${ALIYUN_SMS_SIGN}
+    template-code: ${ALIYUN_SMS_TEMPLATE}
+
+logging:
+  level:
+    com.xiuhui.campus: info

@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.xiuhui.campus</groupId>
+        <artifactId>campus-core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>campus-login</artifactId>
+    <packaging>jar</packaging>
+    <name>登录认证模块</name>
+
+    <dependencies>
+        <!-- 引入用户模块（含 common 传递依赖） -->
+        <dependency>
+            <groupId>com.xiuhui.campus</groupId>
+            <artifactId>campus-user</artifactId>
+        </dependency>
+
+        <!-- 引入公共模块 = 获得 Web、MyBatis-Plus、Redis、MySQL -->
+        <dependency>
+            <groupId>com.xiuhui.campus</groupId>
+            <artifactId>campus-common</artifactId>
+        </dependency>
+
+        <!-- Spring Security（登录模块独有） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- JWT（登录模块独有） -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

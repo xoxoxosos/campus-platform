@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.xiuhui.campus</groupId>
+        <artifactId>campus-core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>campus-user</artifactId>
+    <packaging>jar</packaging>
+    <name>用户管理模块</name>
+    <description>提供用户增删改查、角色管理等基础能力，供其他模块依赖调用</description>
+
+    <dependencies>
+        <!-- 引入公共模块 = 获得 Web、MyBatis-Plus、Redis、MySQL、Validation -->
+        <dependency>
+            <groupId>com.xiuhui.campus</groupId>
+            <artifactId>campus-common</artifactId>
+        </dependency>
+
+        <!-- BCrypt 密码编码（仅需 crypto 模块，无需完整 Security） -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+    </dependencies>
+</project>
